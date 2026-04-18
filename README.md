@@ -1,35 +1,72 @@
 # Ứng dụng Quản lý Chi Tiêu
 
-Một ứng dụng theo dõi chi tiêu cá nhân sử dụng **FastAPI** cho Backend và **Streamlit** cho Frontend. Tích hợp Firebase Authentication và Firestore.
+Ứng dụng theo dõi chi tiêu cá nhân được phát triển bằng **FastAPI** (Backend) và **Streamlit** (Frontend), kết hợp hệ thống dữ liệu đám mây **Firebase (Auth & Firestore)**.
 
-## 1. Hướng cài đặt môi trường
-Tạo và kích hoạt môi trường ảo:
+---
+## Requirements
+
+* Python 3.x
+* Streamlit
+* Other dependencies in `requirements.txt`
+
+## Hướng dẫn cài đặt environment
+
+Đảm bảo máy tính của bạn đã cài đặt Python 3.9 trở lên.
+
+**Bước 1: Tạo và kích hoạt môi trường ảo (Virtual Environment)**
+Tại thư mục gốc của dự án, mở Terminal và chạy lệnh:
 ```bash
 python -m venv venv
+
 # Trên Windows
 venv\Scripts\activate
+
 # Trên MacOS/Linux
 source venv/bin/activate
 ```
 
-Cài đặt tất cả thư viện cần thiết cho cả Frontend và Backend:
+**Bước 2: Cài đặt các thư viện (Dependencies)**
+Sau khi môi trường ảo được kích hoạt thành công, chạy lệnh sau để tải toàn bộ thư viện cần thiết cho dự án:
 ```bash
 pip install -r requirements.txt
 ```
 
-## 2. Truy cập hệ thống Backend
+---
+
+## 🖥️ Hướng dẫn chạy backend
+
+Backend chịu trách nhiệm xác thực người dùng và xử lý tương tác với Firestore Database.
+
+1. Đảm bảo môi trường ảo `venv` đang được kích hoạt trên Terminal.
+2. Di chuyển vào thư mục `backend` và khởi chạy server API:
 ```bash
 cd backend
 uvicorn app.main:app --reload --port 8000
 ```
-API sẽ hoạt động tại `http://localhost:8000`.
+Server Backend sẽ hoạt động ổn định tại: `http://localhost:8000` (Có thể xem API Docs tại `http://localhost:8000/docs`).
 
-## 3. Chạy giao diện Frontend
-Mở một terminal mới, kích hoạt lại môi trường ảo:
+---
+
+## 🎨 Hướng dẫn chạy frontend
+
+Frontend được xây dựng bằng Streamlit và là phần giao diện chính mà người dùng sẽ thao tác.
+
+1. Mở một Terminal mới (hoặc tách nhánh Terminal hiện tại).
+2. Đảm bảo Terminal mới **đang ở thư mục gốc** của dự án (`tdtt_lab2`) và **đã kích hoạt lại môi trường ảo**:
+```bash
+# Trên Windows
+venv\Scripts\activate
+```
+3. Khởi chạy ứng dụng:
 ```bash
 streamlit run frontend/app.py
 ```
-Giao diện sẽ khởi chạy tại `http://localhost:8501`.
+Giao diện sẽ tự động bật lên trên trình duyệt qua địa chỉ: `http://localhost:8501`.
 
-## 4. Video Demo
-[Chèn đường dẫn Video Demo tại đây]
+---
+
+## 🎥 Đường dẫn đến video demo
+
+Mọi phân hệ chức năng từ Đăng nhập, Nhập liệu, Thống kê cho đến Quản lý tài khoản cục bộ đều được vận hành mượt mà trong giao diện Dark Mode xuyên suốt dự án. Xem chi tiết hoạt động qua Video sau:
+
+👉 **[Sinh viên dán đường link Video Demo YouTube / Google Drive vào đây]**
