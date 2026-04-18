@@ -30,7 +30,6 @@ try:
                 
         if "firebase_admin" in secrets:
             cred = credentials.Certificate(secrets["firebase_admin"])
-            # Kiem tra app chua duoc initialize thi moi initialize
             if not firebase_admin._apps:
                 firebase_admin.initialize_app(cred)
         else:

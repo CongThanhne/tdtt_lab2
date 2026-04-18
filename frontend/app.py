@@ -112,7 +112,6 @@ if not st.session_state.token:
     
     st.markdown("""
         <style>
-        /* Riêng ngoài Tab Đăng nhập, text label giữ màu Trắng tinh */
         label[data-testid="stWidgetLabel"] p, label[data-testid="stWidgetLabel"] span {
             color: #FFFFFF !important;
         }
@@ -181,14 +180,12 @@ else:
     
     st.markdown("""
         <style>
-        /* Riêng Form nhập liệu nền Faker sáng, Label chữ bắt buộc Phải Đen */
         label[data-testid="stWidgetLabel"] p, label[data-testid="stWidgetLabel"] span {
             color: #000000 !important;
         }
         </style>
     """, unsafe_allow_html=True)
     
-    # Sidebar
     st.sidebar.markdown(f"### Xin chào,\n**{st.session_state.email}**")
     if st.sidebar.button("Đăng xuất", use_container_width=True):
         st.session_state.token = None
@@ -196,7 +193,6 @@ else:
         save_session()
         st.rerun()
 
-    # Main Area
     st.markdown('<div class="sub-header">Nhập khoản chi mới</div>', unsafe_allow_html=True)
     with st.form("expense", border=True):
         col1, col2 = st.columns(2)
@@ -235,7 +231,6 @@ else:
         if len(data) > 0:
             df = pd.DataFrame(data)
             
-            # Xu ly ngay thang de thong ke
             df["date_parse"] = pd.to_datetime(df["date"])
             df["Tháng"] = df["date_parse"].dt.strftime("%m/%Y")
             df["Ngày"] = df["date_parse"].dt.strftime("%d/%m/%Y")
@@ -243,14 +238,12 @@ else:
             df["Danh mục"] = df.get("category", "Khác")
             df["Số tiền"] = df["amount"].apply(lambda x: f"{x:,.0f} VNĐ".replace(",", "."))
             
-            # Tinh toan Thong ke
             total = sum(d["amount"] for d in data)
             monthly_summary = df.groupby("Tháng")["amount"].agg(["sum", "count"]).reset_index()
             monthly_summary.sort_values(by="Tháng", ascending=False, inplace=True)
             num_months = len(monthly_summary)
             avg_per_month = total / num_months if num_months > 0 else 0
             
-            # Hien thi giao dien the Metric
             st.markdown("### Phân tích tổng quan")
             col1, col2 = st.columns(2)
             
@@ -267,22 +260,18 @@ else:
             with col2:
                 st.markdown(render_custom_metric("Trung bình mỗi tháng", f"{avg_per_month:,.0f} VNĐ".replace(",", ".")), unsafe_allow_html=True)
             
-            # Hien thi Bang tong theo thang
             st.markdown("### Thống kê từng tháng")
             monthly_summary.rename(columns={"sum": "Tổng tiền chi", "count": "Số khoản"}, inplace=True)
             monthly_summary["Tổng tiền chi"] = monthly_summary["Tổng tiền chi"].apply(lambda x: f"{x:,.0f} VNĐ".replace(",", "."))
             st.dataframe(monthly_summary[["Tháng", "Số khoản", "Tổng tiền chi"]], use_container_width=True, hide_index=True)
             
-            # Hien thi Toan bo lich su
             st.markdown("### Nhật ký giao dịch chi tiết")
             st.dataframe(df[["Ngày", "Khoản chi", "Danh mục", "Số tiền"]], use_container_width=True, hide_index=True)
             
-            # Giao dien Xoa
             with st.expander(" Xóa giao dịch"):
                 st.write("Chọn giao dịch bạn muốn xóa:")
                 sorted_data = sorted(data, key=lambda x: x["date"], reverse=True)
                 
-                # Format ngay Date thanh dd/mm/yyyy trong danh sach Xoa
                 def format_date_ddmmyyyy(date_str):
                     parts = date_str.split('-')
                     if len(parts) == 3:
