@@ -1,0 +1,115 @@
+/* Container Headers */
+.main-header {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #023047;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sub-header {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Form và Button */
+.stButton>button {
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.stApp>header {
+    background-color: transparent !important;
+}
+
+/* Box Thống kê siêu cấp */
+.custom-metric-box {
+    background-color: #262730 !important;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.custom-metric-box p,
+.custom-metric-box span,
+.custom-metric-box div {
+    color: #FFFFFF !important;
+    font-weight: 900 !important;
+    text-shadow: none !important;
+}
+
+/* Các cảnh báo Lỗi, Warning, Success */
+[data-testid="stAlert"] {
+    background-color: #262730 !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px;
+}
+
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] span,
+[data-testid="stAlert"] div {
+    color: #FFFFFF !important;
+}
+
+/* Edit Text Input Font Colors */
+.stTextInput>div>div>input,
+.stNumberInput>div>div>input {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Các nhãn cơ sở */
+label[data-testid="stWidgetLabel"] p,
+label[data-testid="stWidgetLabel"] span {
+    font-weight: 900 !important;
+    font-size: 1.05rem !important;
+}
+
+/* Chỉnh Font size cho Tabs Đăng nhập / Đăng ký */
+button[data-baseweb="tab"] * {
+    font-size: 1.15rem !important;
+    font-weight: bold !important;
+}
+
+/* Làm nổi bật Text Tiêu đề bằng bóng đổ */
+h1,
+h2,
+h3 {
+    text-shadow: 2px 2px 6px #000000, 0px 0px 4px #000000 !important;
+    color: white !important;
+}
+
+/* Khung nền Thống kê mặc định */
+div[data-testid="metric-container"] {
+    background-color: #262730 !important;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Khung Xóa hiển thị mờ đục Đen bóng */
+div[data-testid="stExpander"] {
+    background-color: #262730 !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div[data-testid="stExpander"] p,
+div[data-testid="stExpander"] span {
+    color: white !important;
+}

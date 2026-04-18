@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.env
+serviceAccountKey.json
+.venv/
+venv/
+env/
+
+# --- Keys & Secrets ---
+.streamlit/secrets.toml
+credentials.json
+firebase_*.json
+*.pem
+*.key
+
+# --- Custom local caches ---
+.session_cache.json
+*.log
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
