@@ -1,6 +1,6 @@
 # Ứng dụng Quản lý Chi Tiêu
 
-Ứng dụng theo dõi chi tiêu cá nhân được phát triển bằng **FastAPI** (Backend) và **Streamlit** (Frontend), kết hợp hệ thống dữ liệu đám mây **Firebase (Auth & Firestore)**.
+Ứng dụng theo dõi chi tiêu cá nhân được phát triển bằng **FastAPI** (Backend) và **Streamlit** (Frontend), kết hợp hệ thống lưu trữ dữ liệu đám mây **Firebase (Auth & Firestore)**.
 
 ---
 ## Yêu cầu
@@ -72,4 +72,4 @@ Giao diện sẽ tự động bật lên trên trình duyệt qua địa chỉ: 
 
 ## Đường dẫn đến video demo
 
-
+Mọi phân hệ chức năng từ Đăng nhập, Nhập liệu, Thống kê cho đến Quản lý tài khoản cục bộ đều được vận hành mượt mà trong giao diện Dark Mode xuyên suốt dự án. Xem chi tiết hoạt động qua Video sau: `https://youtu.be/-Rqi05uVNMg`
